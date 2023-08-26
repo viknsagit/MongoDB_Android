@@ -1,4 +1,4 @@
-[![.NET](https://github.com/viknsagit/MongoDB_Android/actions/workflows/dotnet.yml/badge.svg)](https://github.com/viknsagit/MongoDB_Android/actions/workflows/dotnet.yml)
+[![Stable](https://github.com/viknsagit/MongoDB_Android/actions/workflows/dotnet.yml/badge.svg)](https://github.com/viknsagit/MongoDB_Android/actions/workflows/dotnet.yml)
 
 # Техническое задание на мобильное приложение для работы с MongoDB
 
