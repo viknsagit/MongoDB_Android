@@ -15,10 +15,17 @@ namespace MongoDB_Android
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
-		builder.Logging.AddDebug();
+            Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>
+            {
+#if ANDROID
+            handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);
 #endif
+            });
 
+#if DEBUG
+            builder.Logging.AddDebug();
+#endif
+            
             return builder.Build();
         }
     }

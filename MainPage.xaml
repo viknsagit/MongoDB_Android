@@ -4,11 +4,60 @@
              x:Class="MongoDB_Android.MainPage"
              >
 
-    <ScrollView>
+    <StackLayout>
+        
         <VerticalStackLayout
-            Spacing="25"
+            Margin="0,25,0,0"
+            Spacing="20"
             Padding="30,0"
             VerticalOptions="Center">
+
+            <HorizontalStackLayout>
+                <Image Source="menu.png" />
+            </HorizontalStackLayout>
+            
+            <VerticalStackLayout>
+                <Label HorizontalOptions="Center" TextColor="White">New connection</Label>
+                <Label HorizontalOptions="Center" TextColor="White">Connect to a MongoDB deployment</Label>
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label TextColor="White">URI</Label>
+                <Image/>
+            </HorizontalStackLayout>
+            
+            <VerticalStackLayout>
+                <Border VerticalOptions="CenterAndExpand" MinimumHeightRequest="125" >
+                    <Entry Margin="10" Placeholder="Server connection string" Keyboard="Url"  >
+                    </Entry>
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20,20,20,20" />
+                    </Border.StrokeShape>
+                </Border>
+            </VerticalStackLayout>
+            
+            <StackLayout Orientation="Horizontal" Spacing="3">
+                <Button Text="Save" BackgroundColor="White" TextColor="#5c5d7b" HorizontalOptions="Start"></Button>
+                <Button Text="Save and Connect" BackgroundColor="White" TextColor="#5c5d7b" HorizontalOptions="EndAndExpand"></Button>
+                <Button Text="Connect" BackgroundColor="White" TextColor="#5c5d7b" HorizontalOptions="End"></Button>
+            </StackLayout>
+
+            <VerticalStackLayout>
+                <Button BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Text="Saved connections"/>
+                <Image></Image>
+            </VerticalStackLayout>
+
         </VerticalStackLayout>
-    </ScrollView>
+        
+        <StackLayout.Background>
+            <LinearGradientBrush  EndPoint="0,1">
+                <GradientStop Color="#25274F"
+                          Offset="0.1" />
+                <GradientStop Color="#000000"
+                          Offset="1" />
+            </LinearGradientBrush>
+            
+        </StackLayout.Background>
+    </StackLayout>
+    
 </ContentPage>
