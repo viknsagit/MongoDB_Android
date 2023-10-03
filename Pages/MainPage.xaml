@@ -13,7 +13,8 @@
             VerticalOptions="Center">
 
             <HorizontalStackLayout>
-                <Image Source="menu.png" />
+                <ImageButton Source="menu.png" Clicked="ImageButton_Clicked"
+                    MaximumWidthRequest="25" MaximumHeightRequest="30" />
             </HorizontalStackLayout>
 
             <VerticalStackLayout>
@@ -24,7 +25,7 @@
             <HorizontalStackLayout Spacing="5">
                 <Label VerticalOptions="CenterAndExpand" TextColor="White">URI</Label>
                 <Image VerticalOptions="CenterAndExpand" Source="info.png" />
-             </HorizontalStackLayout>
+            </HorizontalStackLayout>
 
             <VerticalStackLayout>
                 <Border VerticalOptions="CenterAndExpand" MinimumHeightRequest="125">
@@ -43,14 +44,12 @@
             </StackLayout>
 
             <HorizontalStackLayout HorizontalOptions="Center">
-                <Button BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Text="Saved connections" />
+                <Button BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Text="Saved connections" Clicked="Button_Clicked" />
                 <Image Source="arrow_right.png" Scale="0.8" />
             </HorizontalStackLayout>
-    
         </VerticalStackLayout>
 
         <StackLayout.Background>
-
             <LinearGradientBrush  EndPoint="0,1">
                 <GradientStop Color="#25274F"
                           Offset="0.1" />
