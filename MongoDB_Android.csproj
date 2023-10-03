@@ -38,6 +38,7 @@
 	  <ApplicationTitle>MongoClient - MongoDB Client</ApplicationTitle>
 	  <ApplicationId>viknsagit.mongoclient</ApplicationId>
 	  <AndroidKeyStore>False</AndroidKeyStore>
+	  <AndroidCreatePackagePerAbi>True</AndroidCreatePackagePerAbi>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-maccatalyst|AnyCPU'">
@@ -49,6 +50,9 @@
 	  <ApplicationTitle>MongoClient - MongoDB Client</ApplicationTitle>
 	  <ApplicationId>viknsagit.mongoclient</ApplicationId>
 	  <AndroidKeyStore>False</AndroidKeyStore>
+	  <AndroidCreatePackagePerAbi>True</AndroidCreatePackagePerAbi>
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -69,6 +73,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
