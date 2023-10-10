@@ -44,7 +44,7 @@
             </StackLayout>
 
             <HorizontalStackLayout HorizontalOptions="Center">
-                <Button BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Text="Saved connections"  Clicked="Button_Clicked" ImageSource="arrow_right.png"  ContentLayout="right,6" />
+                <Button ContentLayout="right,6"  TextColor="White" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Text="Saved connections"  Clicked="Button_Clicked" ImageSource="arrow_right.png"   />
             </HorizontalStackLayout>
         </VerticalStackLayout>
 
