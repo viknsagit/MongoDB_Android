@@ -7,9 +7,11 @@
     xmlns:local="clr-namespace:MongoDB_Android"
 
     FlyoutBehavior="Flyout"
+    FlyoutIsPresented = "False"
     FlyoutHeight="200"
+    Shell.NavBarHasShadow="False"
     Shell.NavBarIsVisible="False"
-    FlyoutBackgroundColor="White">
+    FlyoutBackgroundColor="Transparent">
 
     <ShellContent
         ContentTemplate="{DataTemplate local:MainPage}"
@@ -17,4 +19,20 @@
 
     <ShellContent ContentTemplate="{DataTemplate local:SavedConnectionsPage}"
         Route="SavedConnections" />
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Border>
+                <VerticalStackLayout Margin="2" Spacing="2">
+                    <Button Clicked="Button_Clicked" Text="New Connection" TextColor="Black" BackgroundColor="White"></Button>
+                    <Button Clicked="Button_Clicked_1" Text="Saved Connections" TextColor="Black" BackgroundColor="White"></Button>
+                    <Button Text="Recent Connections" TextColor="Black" BackgroundColor="White"></Button>
+                    <Button Text="Settings" TextColor="Black" BackgroundColor="White"></Button>
+                </VerticalStackLayout>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="0,20,00,20" />
+                </Border.StrokeShape>
+            </Border>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
 </Shell>

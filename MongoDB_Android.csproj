@@ -18,8 +18,8 @@
 		<ApplicationIdGuid>765e28ad-50ee-4c49-9b8e-16447c374501</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1</ApplicationDisplayVersion>
-		<ApplicationVersion>1.1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.2</ApplicationDisplayVersion>
+		<ApplicationVersion>1.2</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
@@ -37,7 +37,7 @@
 	  <AndroidKeyStore>False</AndroidKeyStore>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
-	  <AndroidPackageFormat>aab</AndroidPackageFormat>
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android33.0|AnyCPU'">
@@ -45,7 +45,7 @@
 	  <ApplicationId>viknsagit.mongoclient</ApplicationId>
 	  <AndroidKeyStore>False</AndroidKeyStore>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-	  <AndroidPackageFormat>aab</AndroidPackageFormat>
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	</PropertyGroup>
 
