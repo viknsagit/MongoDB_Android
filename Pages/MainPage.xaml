@@ -4,7 +4,6 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
-
     <StackLayout>
 
         <VerticalStackLayout
@@ -34,6 +33,7 @@
             <VerticalStackLayout>
                 <Border MinimumHeightRequest="125" VerticalOptions="CenterAndExpand">
                     <Entry
+                        x:Name="UrlEntry"
                         Margin="10"
                         Keyboard="Url"
                         Placeholder="mongodb://localhost:27017" />

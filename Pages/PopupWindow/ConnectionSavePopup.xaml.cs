@@ -1,5 +1,7 @@
 using CommunityToolkit.Maui.Views;
 
+using MongoDB_Android.Services.Storage.Connections;
+
 namespace MongoDB_Android.Pages.PopupWindow;
 
 public partial class ConnectionSavePopup : Popup
@@ -12,13 +14,13 @@ public partial class ConnectionSavePopup : Popup
         _connectToDatabase = connect;
     }
 
-    private async Task Close_Button(object sender, EventArgs e)
+    private async void Close_Button(object sender, EventArgs e)
     {
         await CloseAsync();
     }
 
-    private async Task Save_Button(object sender, EventArgs e)
+    private async void Save_Button(object sender, EventArgs e)
     {
-        await CloseAsync();
+        await CloseAsync(Entry.Text);
     }
 }

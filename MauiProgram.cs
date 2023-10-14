@@ -2,6 +2,8 @@
 
 using Microsoft.Extensions.Logging;
 
+using MongoDB_Android.Services.Storage.Connections;
+
 namespace MongoDB_Android
 {
     public static class MauiProgram
@@ -19,6 +21,10 @@ namespace MongoDB_Android
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddTransient<ConnectionsStorage>();
+
+            //Убираю подчеркивание в Entry глобально.
             Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>
             {
 #if ANDROID

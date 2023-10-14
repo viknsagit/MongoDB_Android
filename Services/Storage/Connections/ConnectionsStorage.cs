@@ -1,8 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Nodes;
-using System;
 
 namespace MongoDB_Android.Services.Storage.Connections
 {
@@ -11,12 +9,10 @@ namespace MongoDB_Android.Services.Storage.Connections
         private readonly string _storage;
         private readonly string _cache;
 
-        public ConnectionsStorage(string storageDirectory, string cacheDirectory)
+        public ConnectionsStorage()
         {
-            _storage = storageDirectory;
-            _cache = cacheDirectory;
-            Debug.WriteLine("Storage directory: " + storageDirectory);
-            Debug.WriteLine("Cache directory: " + cacheDirectory);
+            _storage = FileSystem.Current.AppDataDirectory;
+            _cache = FileSystem.Current.CacheDirectory;
         }
 
         public async Task CreateStorageAsync()
@@ -47,10 +43,10 @@ namespace MongoDB_Android.Services.Storage.Connections
             await LogFileAsync();
         }
 
-        public async Task AddNewConnectionToStorageAsync(string url)
+        public async Task AddNewConnectionToStorageAsync(Connection connection)
         {
             var json = await GetConnectionsListAsync();
-            json.Connections.Add(url);
+            json.Connections!.Add(connection);
             await UpdateConnectionsListAsync(json);
             await LogFileAsync();
         }
@@ -75,11 +71,11 @@ namespace MongoDB_Android.Services.Storage.Connections
             await CreateStorageAsync();
         }
 
-        public async Task DeleteConnectionFromStorageAsync(string url)
+        public async Task DeleteConnectionFromStorageAsync(Connection connection)
         {
             var list = await GetConnectionsListAsync();
 
-            if (list.Connections.Remove(url))
+            if (list.Connections!.Remove(connection))
                 await UpdateConnectionsListAsync(list);
         }
     }
