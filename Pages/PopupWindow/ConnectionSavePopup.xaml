@@ -40,14 +40,14 @@
                 HorizontalOptions="End"
                 Spacing="8">
                 <Button
-                    Clicked="Button_Clicked_1"
+                    Clicked="Close_Button"
                     CornerRadius="30"
                     HorizontalOptions="End"
                     MaximumHeightRequest="40"
                     MinimumWidthRequest="75"
                     Text="Close" />
                 <Button
-                    Clicked="Button_Clicked"
+                    Clicked="Save_Button"
                     CornerRadius="30"
                     HorizontalOptions="End"
                     MaximumHeightRequest="40"

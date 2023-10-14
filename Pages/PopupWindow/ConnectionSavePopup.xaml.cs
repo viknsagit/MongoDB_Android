@@ -12,11 +12,13 @@ public partial class ConnectionSavePopup : Popup
         _connectToDatabase = connect;
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async Task Close_Button(object sender, EventArgs e)
     {
+        await CloseAsync();
     }
 
-    private void Button_Clicked_1(object sender, EventArgs e)
+    private async Task Save_Button(object sender, EventArgs e)
     {
+        await CloseAsync();
     }
 }
