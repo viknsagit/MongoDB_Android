@@ -1,20 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="MongoDB_Android.MainPage">
+<ContentPage
+    x:Class="MongoDB_Android.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <StackLayout>
 
         <VerticalStackLayout
             Margin="0,25,0,0"
-            Spacing="20"
             Padding="30,0"
+            Spacing="20"
             VerticalOptions="Center">
 
             <HorizontalStackLayout>
-                <ImageButton Source="menu.png" Clicked="ImageButton_Clicked"
-                    MaximumWidthRequest="25" MaximumHeightRequest="30" />
+                <ImageButton
+                    Clicked="ImageButton_Clicked"
+                    MaximumHeightRequest="30"
+                    MaximumWidthRequest="25"
+                    Source="menu.png" />
             </HorizontalStackLayout>
 
             <VerticalStackLayout>
@@ -23,14 +27,16 @@
             </VerticalStackLayout>
 
             <HorizontalStackLayout Spacing="5">
-                <Label VerticalOptions="CenterAndExpand" TextColor="White">URI</Label>
-                <Image VerticalOptions="CenterAndExpand" Source="info.png" />
+                <Label TextColor="White" VerticalOptions="CenterAndExpand">URI</Label>
+                <Image Source="info.png" VerticalOptions="CenterAndExpand" />
             </HorizontalStackLayout>
 
             <VerticalStackLayout>
-                <Border VerticalOptions="CenterAndExpand" MinimumHeightRequest="125">
-                    <Entry Margin="10" Placeholder="mongodb://localhost:27017" Keyboard="Url">
-                    </Entry>
+                <Border MinimumHeightRequest="125" VerticalOptions="CenterAndExpand">
+                    <Entry
+                        Margin="10"
+                        Keyboard="Url"
+                        Placeholder="mongodb://localhost:27017" />
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="20,20,20,20" />
                     </Border.StrokeShape>
@@ -38,22 +44,41 @@
             </VerticalStackLayout>
 
             <StackLayout Orientation="Horizontal" Spacing="3">
-                <Button Text="Save" BackgroundColor="White" TextColor="#5c5d7b" HorizontalOptions="Start"></Button>
-                <Button Text="Save and Connect" BackgroundColor="White" TextColor="#5c5d7b" HorizontalOptions="EndAndExpand"></Button>
-                <Button Text="Connect" BackgroundColor="White" TextColor="#5c5d7b" HorizontalOptions="End"></Button>
+                <Button
+                    BackgroundColor="White"
+                    Clicked="Button_Clicked_1"
+                    HorizontalOptions="Start"
+                    Text="Save"
+                    TextColor="#5c5d7b" />
+                <Button
+                    BackgroundColor="White"
+                    Clicked="Button_Clicked_2"
+                    HorizontalOptions="EndAndExpand"
+                    Text="Save and Connect"
+                    TextColor="#5c5d7b" />
+                <Button
+                    BackgroundColor="White"
+                    HorizontalOptions="End"
+                    Text="Connect"
+                    TextColor="#5c5d7b" />
             </StackLayout>
 
             <HorizontalStackLayout HorizontalOptions="Center">
-                <Button ContentLayout="right,6"  TextColor="White" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Text="Saved connections"  Clicked="Button_Clicked" ImageSource="arrow_right.png"   />
+                <Button
+                    BackgroundColor="Transparent"
+                    Clicked="Button_Clicked"
+                    ContentLayout="right,6"
+                    HorizontalOptions="CenterAndExpand"
+                    ImageSource="arrow_right.png"
+                    Text="Saved connections"
+                    TextColor="White" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
 
         <StackLayout.Background>
-            <LinearGradientBrush  EndPoint="0,1">
-                <GradientStop Color="#25274F"
-                          Offset="0.1" />
-                <GradientStop Color="#000000"
-                          Offset="1" />
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Offset="0.1" Color="#25274F" />
+                <GradientStop Offset="1" Color="#000000" />
             </LinearGradientBrush>
         </StackLayout.Background>
     </StackLayout>

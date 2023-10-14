@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="MongoDB_Android.Pages.PopupWindow.ConnectionSavePopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    CanBeDismissedByTappingOutsideOfPopup="True"
+    Color="Transparent">
+
+    <Border BackgroundColor="White" MinimumWidthRequest="250">
+        <VerticalStackLayout
+            Margin="25"
+            BackgroundColor="White"
+            Spacing="3">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="Body"
+                HorizontalOptions="Center">
+                Save connection to favorites
+            </Label>
+
+            <Border
+                Margin="0,10,0,0"
+                BackgroundColor="#D2D2D2"
+                MinimumWidthRequest="280">
+                <Entry
+                    Margin="10,0,10,0"
+                    BackgroundColor="#D2D2D2"
+                    MaximumWidthRequest="250"
+                    Placeholder="Name"
+                    TextColor="Black" />
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="30,30,30,30" />
+                </Border.StrokeShape>
+            </Border>
+
+            <HorizontalStackLayout
+                Margin="0,18,0,0"
+                HorizontalOptions="End"
+                Spacing="8">
+                <Button
+                    Clicked="Button_Clicked_1"
+                    CornerRadius="30"
+                    HorizontalOptions="End"
+                    MaximumHeightRequest="40"
+                    MinimumWidthRequest="75"
+                    Text="Close" />
+                <Button
+                    Clicked="Button_Clicked"
+                    CornerRadius="30"
+                    HorizontalOptions="End"
+                    MaximumHeightRequest="40"
+                    MinimumWidthRequest="75"
+                    Text="Save" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="20,20,20,20" />
+        </Border.StrokeShape>
+    </Border>
+</toolkit:Popup>
