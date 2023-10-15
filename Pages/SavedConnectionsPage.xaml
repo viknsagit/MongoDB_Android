@@ -29,6 +29,7 @@
 
             <Border
                 Margin="0,15,0,0"
+                BackgroundColor="White"
                 HorizontalOptions="Fill"
                 MinimumHeightRequest="650">
                 <CollectionView Margin="25,30,25,0" ItemsSource="{Binding Connections}">

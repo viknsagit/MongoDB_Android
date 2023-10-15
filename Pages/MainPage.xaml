@@ -31,10 +31,14 @@
             </HorizontalStackLayout>
 
             <VerticalStackLayout>
-                <Border MinimumHeightRequest="125" VerticalOptions="CenterAndExpand">
+                <Border
+                    BackgroundColor="White"
+                    MinimumHeightRequest="125"
+                    VerticalOptions="CenterAndExpand">
                     <Entry
                         x:Name="UrlEntry"
                         Margin="10"
+                        BackgroundColor="White"
                         Keyboard="Url"
                         Placeholder="mongodb://localhost:27017" />
                     <Border.StrokeShape>
