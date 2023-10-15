@@ -3,6 +3,7 @@
 using Microsoft.Extensions.Logging;
 
 using MongoDB_Android.Services.Storage.Connections;
+using MongoDB_Android.ViewModels;
 
 namespace MongoDB_Android
 {
@@ -23,6 +24,9 @@ namespace MongoDB_Android
 
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddTransient<ConnectionsStorage>();
+
+            builder.Services.AddTransient<SavedConnectionsPage>();
+            builder.Services.AddTransient<ConnectionsViewModel>();
 
             //Убираю подчеркивание в Entry глобально.
             Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>

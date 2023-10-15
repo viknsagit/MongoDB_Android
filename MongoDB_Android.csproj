@@ -37,7 +37,7 @@
 	  <AndroidKeyStore>False</AndroidKeyStore>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
-	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	  <AndroidPackageFormat>aab</AndroidPackageFormat>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android33.0|AnyCPU'">
@@ -45,7 +45,7 @@
 	  <ApplicationId>viknsagit.mongoclient</ApplicationId>
 	  <AndroidKeyStore>False</AndroidKeyStore>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	  <AndroidPackageFormat>aab</AndroidPackageFormat>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	</PropertyGroup>
 

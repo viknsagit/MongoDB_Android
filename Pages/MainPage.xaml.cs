@@ -53,7 +53,8 @@ namespace MongoDB_Android
             var result = await this.ShowPopupAsync(popup);
             if (result is string name)
             {
-                await _connectionStorage.AddNewConnectionToStorageAsync(new Connection() { Name = name, UnixTimeAdd = DateTimeOffset.Now.ToUnixTimeSeconds().ToString(), Url = UrlEntry.Text });
+                await _connectionStorage.AddNewConnectionToStorageAsync(new ConnectionModel() { name = name, unixTimeAdd = DateTimeOffset.Now.ToUnixTimeSeconds().ToString(), url = UrlEntry.Text });
+                UrlEntry.Text = string.Empty;
             }
         }
     }

@@ -43,7 +43,7 @@ namespace MongoDB_Android.Services.Storage.Connections
             await LogFileAsync();
         }
 
-        public async Task AddNewConnectionToStorageAsync(Connection connection)
+        public async Task AddNewConnectionToStorageAsync(ConnectionModel connection)
         {
             var json = await GetConnectionsListAsync();
             json.Connections!.Add(connection);
@@ -65,13 +65,13 @@ namespace MongoDB_Android.Services.Storage.Connections
             return list!;
         }
 
-        public async Task ClearConnectionsAsync()
+        public async Task ResetConnectionsAsync()
         {
             File.Delete(_storage + "Connections.json");
             await CreateStorageAsync();
         }
 
-        public async Task DeleteConnectionFromStorageAsync(Connection connection)
+        public async Task DeleteConnectionFromStorageAsync(ConnectionModel connection)
         {
             var list = await GetConnectionsListAsync();
 

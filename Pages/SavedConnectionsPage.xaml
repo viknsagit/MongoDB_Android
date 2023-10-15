@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MongoDB_Android.SavedConnectionsPage"
-             Shell.NavBarIsVisible="False">
+<ContentPage
+    x:Class="MongoDB_Android.SavedConnectionsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Model="clr-namespace:MongoDB_Android.Services.Storage.Connections"
+    xmlns:ViewModel="clr-namespace:MongoDB_Android.ViewModels"
+    x:DataType="ViewModel:ConnectionsViewModel"
+    Shell.NavBarIsVisible="False">
 
     <StackLayout>
 
@@ -11,8 +15,11 @@
             Spacing="10"
             VerticalOptions="Center">
             <HorizontalStackLayout Padding="25">
-                <ImageButton Source="menu.png" Clicked="ImageButton_Clicked"
-                    MaximumWidthRequest="25" MaximumHeightRequest="30" />
+                <ImageButton
+                    Clicked="ImageButton_Clicked"
+                    MaximumHeightRequest="30"
+                    MaximumWidthRequest="25"
+                    Source="menu.png" />
             </HorizontalStackLayout>
 
             <VerticalStackLayout HorizontalOptions="CenterAndExpand">
@@ -20,8 +27,23 @@
                 <Label FontSize="26" TextColor="White">Saved connections</Label>
             </VerticalStackLayout>
 
-            <Border MinimumHeightRequest="650" HorizontalOptions="Fill" Margin="0,15,0,0">
+            <Border
+                Margin="0,15,0,0"
+                HorizontalOptions="Fill"
+                MinimumHeightRequest="650">
+                <CollectionView Margin="25,30,25,0" ItemsSource="{Binding Connections}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="Model:ConnectionModel">
+                            <HorizontalStackLayout>
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Name}" />
+                                    <Label Text="{Binding UnixTimeAdd}" />
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
 
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="30,30,0,0" />
                 </Border.StrokeShape>
@@ -29,11 +51,9 @@
         </VerticalStackLayout>
 
         <StackLayout.Background>
-            <LinearGradientBrush  EndPoint="0,1">
-                <GradientStop Color="#25274F"
-                  Offset="0.1" />
-                <GradientStop Color="#000000"
-                  Offset="1" />
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Offset="0.1" Color="#25274F" />
+                <GradientStop Offset="1" Color="#000000" />
             </LinearGradientBrush>
         </StackLayout.Background>
     </StackLayout>

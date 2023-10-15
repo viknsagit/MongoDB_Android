@@ -5,6 +5,6 @@ namespace MongoDB_Android.Services.Storage.Connections
     public class ConnectionsList
     {
         [JsonPropertyName("Connections")]
-        public List<Connection>? Connections { get; set; }
+        public List<ConnectionModel>? Connections { get; set; }
     }
 }
