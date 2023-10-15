@@ -34,13 +34,25 @@
                 <CollectionView Margin="25,30,25,0" ItemsSource="{Binding Connections}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="Model:ConnectionModel">
-                            <HorizontalStackLayout>
-                                <VerticalStackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <VerticalStackLayout Grid.Column="0">
                                     <Label Text="{Binding Name}" />
                                     <Label Text="{Binding UnixTimeAdd}" />
                                 </VerticalStackLayout>
-                            </HorizontalStackLayout>
+                                <HorizontalStackLayout
+                                    Grid.Column="1"
+                                    Margin="0,0,10,0"
+                                    HorizontalOptions="End"
+                                    Spacing="5">
+                                    <ImageButton MaximumWidthRequest="20" Source="pencil" />
+                                    <ImageButton MaximumWidthRequest="20" Source="bucket" />
+                                </HorizontalStackLayout>
 
+                            </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
