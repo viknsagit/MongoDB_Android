@@ -40,7 +40,8 @@
                         Margin="10"
                         BackgroundColor="White"
                         Keyboard="Url"
-                        Placeholder="mongodb://localhost:27017" />
+                        Placeholder="mongodb://localhost:27017"
+                        TextColor="Black" />
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="20,20,20,20" />
                     </Border.StrokeShape>

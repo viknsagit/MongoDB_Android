@@ -12,7 +12,7 @@ namespace MongoDB_Android.Services.Storage.Connections
 
         [JsonPropertyName("UnixTimeAdd")]
         [ObservableProperty]
-        public string unixTimeAdd;
+        public long unixTimeAdd;
 
         [JsonPropertyName("Url")]
         [ObservableProperty]

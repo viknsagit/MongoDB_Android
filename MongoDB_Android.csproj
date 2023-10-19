@@ -27,6 +27,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<AndroidSigningKeyStore>viknsagit.keystore</AndroidSigningKeyStore>
 	</PropertyGroup>
 
 	
@@ -38,6 +39,8 @@
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	  <AndroidSigningStorePass>09v12v02</AndroidSigningStorePass>
+	  <AndroidSigningKeyAlias></AndroidSigningKeyAlias>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android33.0|AnyCPU'">
@@ -47,6 +50,8 @@
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
+	  <AndroidSigningStorePass>09v12v02</AndroidSigningStorePass>
+	  <AndroidSigningKeyAlias></AndroidSigningKeyAlias>
 	</PropertyGroup>
 
 	<ItemGroup>

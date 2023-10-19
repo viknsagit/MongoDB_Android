@@ -23,8 +23,6 @@ namespace MongoDB_Android.ViewModels
                 var list = (await _storage.GetConnectionsListAsync()).Connections;
                 if (Connections.Count != 0)
                     Connections.Clear();
-                else
-                    return;
 
                 foreach (var connection in list!)
                     Connections.Add(connection);
