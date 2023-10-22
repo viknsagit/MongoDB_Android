@@ -39,25 +39,57 @@
                 BackgroundColor="White"
                 HorizontalOptions="Fill"
                 MinimumHeightRequest="650">
-                <CollectionView Margin="25,30,25,0" ItemsSource="{Binding Connections}">
+                <CollectionView
+                    Margin="25,30,25,0"
+                    ItemsSource="{Binding Connections}"
+                    SelectionMode="None">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="Model:ConnectionModel">
                             <Grid>
+
+
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <VerticalStackLayout Grid.Column="0">
-                                    <Label Text="{Binding Name}" TextColor="Black" />
-                                    <Label Text="{Binding UnixTimeAdd, Converter={StaticResource UnixStringToDateTimeConverter}, StringFormat='Added {0:MM/dd/yyyy HH:mm:ss}'}" TextColor="Black" />
-                                </VerticalStackLayout>
+                                <HorizontalStackLayout Grid.Column="0">
+                                    <HorizontalStackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type ViewModel:ConnectionsViewModel}}, Path=ConnectCommand}"
+                                            CommandParameter="{Binding .}"
+                                            NumberOfTapsRequired="1" />
+                                    </HorizontalStackLayout.GestureRecognizers>
+
+                                    <Border
+                                        Grid.Column="0"
+                                        BackgroundColor="#25274F"
+                                        HeightRequest="45"
+                                        WidthRequest="15">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="30,30,30,30" />
+                                        </Border.StrokeShape>
+                                    </Border>
+                                    <VerticalStackLayout Margin="5,0,0,0">
+                                        <Label Text="{Binding Name}" TextColor="Black" />
+                                        <Label Text="{Binding UnixTimeAdd, Converter={StaticResource UnixStringToDateTimeConverter}, StringFormat='Added {0:MM/dd HH:mm:ss}'}" TextColor="Black" />
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+
                                 <HorizontalStackLayout
                                     Grid.Column="1"
                                     Margin="0,0,10,0"
                                     HorizontalOptions="End"
                                     Spacing="5">
-                                    <ImageButton MaximumWidthRequest="20" Source="pencil" />
-                                    <ImageButton MaximumWidthRequest="20" Source="bucket" />
+                                    <ImageButton
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ViewModel:ConnectionsViewModel}}, Path=EditConnectionCommand}"
+                                        CommandParameter="{Binding .}"
+                                        MaximumWidthRequest="20"
+                                        Source="pencil" />
+                                    <ImageButton
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ViewModel:ConnectionsViewModel}},Path=RemoveConnectionCommand}}"
+                                        CommandParameter="{Binding .}"
+                                        MaximumWidthRequest="20"
+                                        Source="bucket" />
                                 </HorizontalStackLayout>
                             </Grid>
                         </DataTemplate>

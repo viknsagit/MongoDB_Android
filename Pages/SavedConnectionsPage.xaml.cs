@@ -17,7 +17,7 @@ public partial class SavedConnectionsPage : ContentPage
     {
         base.OnAppearing();
 
-        await _connectionViewModel.GetConnectionAsync();
+        await _connectionViewModel.GetConnectionsAsync();
     }
 
     private void ImageButton_Clicked(object sender, EventArgs e)

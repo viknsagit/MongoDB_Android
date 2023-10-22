@@ -24,22 +24,15 @@ namespace MongoDB_Android.Services.Storage.Connections
             }
 
             var json = JsonSerializer.Serialize(new ConnectionsList() { Connections = new() });
-            byte[] buffer = Encoding.Default.GetBytes(json);
-
-            using FileStream fileStream = File.Create(_storage + "Connections.json");
-            await fileStream.WriteAsync(buffer);
-            fileStream.Close();
+            await File.WriteAllTextAsync(_storage + "Connections.json", json);
             await LogFileAsync();
         }
 
         private async Task UpdateConnectionsListAsync(ConnectionsList list)
         {
             var json = JsonSerializer.Serialize(list);
-            byte[] buffer = Encoding.Default.GetBytes(json);
-
-            using FileStream fileStream = File.OpenWrite(_storage + "Connections.json");
-            await fileStream.WriteAsync(buffer);
-            fileStream.Close();
+            if (File.Exists(_storage + "Connections.json"))
+                await File.WriteAllTextAsync(_storage + "Connections.json", json);
             await LogFileAsync();
         }
 
@@ -75,8 +68,11 @@ namespace MongoDB_Android.Services.Storage.Connections
         {
             var list = await GetConnectionsListAsync();
 
-            if (list.Connections!.Remove(connection))
-                await UpdateConnectionsListAsync(list);
+            var item = list!.Connections.Where(x => x.Name == connection.Name);
+            if (item.Count() > 0)
+                list.Connections.Remove(item.First());
+
+            await UpdateConnectionsListAsync(list);
         }
     }
 }
