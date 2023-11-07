@@ -3,31 +3,46 @@
     x:Class="MongoDB_Android.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:MongoDB_Android"
-
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    FlyoutBackgroundColor="Transparent"
     FlyoutBehavior="Flyout"
-    FlyoutIsPresented = "False"
     FlyoutHeight="200"
+    FlyoutIsPresented="False"
     Shell.NavBarHasShadow="False"
-    Shell.NavBarIsVisible="False"
-    FlyoutBackgroundColor="Transparent">
+    Shell.NavBarIsVisible="False">
 
-    <ShellContent
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
 
-    <ShellContent ContentTemplate="{DataTemplate local:SavedConnectionsPage}"
-        Route="SavedConnections" />
+    <ShellContent ContentTemplate="{DataTemplate local:SavedConnectionsPage}" Route="SavedConnections" />
+
+    <ShellContent ContentTemplate="{DataTemplate local:ServerPage}" Route="Server" />
 
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <Border>
-                <VerticalStackLayout BackgroundColor="White" Margin="2" Spacing="2">
-                    <Button Clicked="Button_Clicked" Text="New Connection" TextColor="Black" BackgroundColor="White"></Button>
-                    <Button Clicked="Button_Clicked_1" Text="Saved Connections" TextColor="Black" BackgroundColor="White"></Button>
-                    <Button Text="Recent Connections" TextColor="Black" BackgroundColor="White"></Button>
-                    <Button Text="Settings" TextColor="Black" BackgroundColor="White"></Button>
+                <VerticalStackLayout
+                    Margin="2"
+                    BackgroundColor="White"
+                    Spacing="2">
+                    <Button
+                        BackgroundColor="White"
+                        Clicked="Button_Clicked"
+                        Text="New Connection"
+                        TextColor="Black" />
+                    <Button
+                        BackgroundColor="White"
+                        Clicked="Button_Clicked_1"
+                        Text="Saved Connections"
+                        TextColor="Black" />
+                    <Button
+                        BackgroundColor="White"
+                        Text="Recent Connections"
+                        TextColor="Black" />
+                    <Button
+                        BackgroundColor="White"
+                        Text="Settings"
+                        TextColor="Black" />
                 </VerticalStackLayout>
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="0,20,00,20" />

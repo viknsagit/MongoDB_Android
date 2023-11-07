@@ -20,7 +20,7 @@ namespace MongoDB_Android
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await _connectionStorage.ResetConnectionsAsync();
+            await _connectionStorage.CreateStorageAsync();
         }
 
         private async void ImageButton_Clicked(object sender, EventArgs e)

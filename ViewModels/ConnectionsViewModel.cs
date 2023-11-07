@@ -53,6 +53,12 @@ namespace MongoDB_Android.ViewModels
         {
             if (connectionUrl is null)
                 await Task.CompletedTask;
+
+            Debug.WriteLine($"Connecting {connectionUrl.Url}");
+
+
+
+
         }
     }
 }

@@ -68,7 +68,7 @@ namespace MongoDB_Android.Services.Storage.Connections
         {
             var list = await GetConnectionsListAsync();
 
-            var item = list!.Connections.Where(x => x.Name == connection.Name);
+            var item = list!.Connections!.Where(x => x.Name == connection.Name);
             if (item.Count() > 0)
                 list.Connections.Remove(item.First());
 
